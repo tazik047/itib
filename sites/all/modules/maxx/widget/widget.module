@@ -1,0 +1,398 @@
+<?php
+/**
+ * Implementation of hook_block_info()
+ */
+function widget_block_info() {
+    // This example comes from node.module.
+
+    $blocks['widget_twitter'] = array(
+        'info' => t('[Maxx] Latest Tweets'),
+    );
+	$blocks['widget_flickr'] = array(
+        'info' => t('[Maxx] Flickr Widget'),
+    );
+	$blocks['recent_projects'] = array(
+      'info' => t('[Maxx] Recent Work'),
+  	);
+	$blocks['recent_posts_sidebar'] = array(
+      'info' => t('[Maxx] Recent posts sidebar'),
+  	);
+	$blocks['categories_sidebar'] = array(
+      'info' => t('[Maxx] Categories sidebar'),
+  	);
+	$blocks['tag_cloud_sidebar'] = array(
+      'info' => t('[Maxx] Tag Cloud sidebar'),
+  	);
+	$blocks['recent_posts_footer'] = array(
+      'info' => t('[Maxx] Recent posts footer'),
+  	);
+	$blocks['widget_social_network'] = array(
+      'info' => t('[Maxx] Social network'),
+  	);
+	$blocks['widget_slideshow'] = array(
+      'info' => t('[Maxx] Slideshow'),
+  	);
+    return $blocks;
+}
+
+/**
+ * Implementation of hook_block_configure()
+ */
+function widget_block_configure($delta = '') {
+    $form = array();
+    switch ($delta) {
+        case 'widget_twitter':
+            $form['widget_twitter_username'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Your twitter username'),
+                '#default_value' => variable_get('widget_twitter_username', 'Yeahthemes'),
+                '#description' => t('Eg: Yeahthemes')
+            );
+
+            $form['widget_twitter_tweets_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of recent tweets items to display'),
+                '#default_value' => variable_get('widget_twitter_tweets_count', 2),
+                '#options' => drupal_map_assoc(array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+			
+            break;
+			
+		case 'widget_flickr':
+            $form['widget_flickr_id'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Your flickr ID'),
+                '#default_value' => variable_get('widget_flickr_id', '52617155@N08'),
+                '#description' => t('Eg: 52617155@N08')
+            );
+            $form['widget_flickr_photo_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of recent photos items to display'),
+                '#default_value' => variable_get('widget_flickr_photo_count', 6),
+                '#options' => drupal_map_assoc(array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+
+
+            break;
+		
+		case 'recent_projects':
+			$form['recent_projects_block_count'] = array(
+			  '#type' => 'select',
+			  '#title' => t('Number of items to display'),
+			  '#default_value' => variable_get('recent_projects_block_count', 4),
+			  '#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 36, 40)),
+			);
+			break;
+		
+		case 'recent_posts_sidebar':
+			$form['recent_posts_sidebar_block_count'] = array(
+			  '#type' => 'select',
+			  '#title' => t('Number of items to display'),
+			  '#default_value' => variable_get('recent_posts_sidebar_block_count', 5),
+			  '#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)),
+			);
+			break;
+		case 'categories_sidebar':
+			$vocabulary = taxonomy_get_vocabularies();
+			$checklist_vocab_array = array(); 
+			foreach ($vocabulary as $item) {
+				$key = $item->vid;
+				$value = $item->name;
+				$checklist_vocab_array[$key] = $value;
+			}
+			
+			
+			$form['categories_sidebar_id'] = array(
+			'#type'             => 'select',
+			'#title'            => t('List of current Vocabularies.'),
+			'#position'         => 'left' ,
+			'#options'          => $checklist_vocab_array ,
+			'#default_value'    => variable_get('categories_sidebar_id'),
+			'#description'      => t('List of vocabularies displayed as select'),
+			);
+			// return system_settings_form($form);
+			break;
+		case 'tag_cloud_sidebar':
+			$vocabulary_tag_cloud = taxonomy_get_vocabularies();
+			$checklist_vocab_tag_cloud_array = array(); 
+			foreach ($vocabulary_tag_cloud as $item) {
+				$key = $item->vid;
+				$value = $item->name;
+				$checklist_vocab_tag_cloud_array[$key] = $value;
+			}
+			
+			
+			$form['tag_cloud_sidebar_id'] = array(
+			'#type'             => 'select',
+			'#title'            => t('List of current Vocabularies.'),
+			'#position'         => 'left',
+			'#options'          => $checklist_vocab_tag_cloud_array,
+			'#default_value'    => variable_get('tag_cloud_sidebar_id'),
+			'#description'      => t('List of vocabularies displayed as select'),
+			);
+			// return system_settings_form($form);
+			break;
+		case 'recent_posts_footer':
+			$form['recent_posts_footer_block_count'] = array(
+			  '#type' => 'select',
+			  '#title' => t('Number of items to display'),
+			  '#default_value' => variable_get('recent_posts_footer_block_count', 2),
+			  '#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)),
+			);
+			break;
+		case 'widget_social_network':
+			$form['facebook'] = array(
+			  '#type' => 'textfield',
+			  '#title' => t('Add your Facebook url.'),
+			  '#default_value' => variable_get('facebook', ''),
+			);
+			$form['twitter'] = array(
+			  '#type' => 'textfield',
+			  '#title' => t('Add your Twitter url.'),
+			  '#default_value' => variable_get('twitter', ''),
+			);
+			$form['delicious'] = array(
+			  '#type' => 'textfield',
+			  '#title' => t('Add your Delicious url.'),
+			  '#default_value' => variable_get('delicious', ''),
+			);
+			$form['google_plus'] = array(
+			  '#type' => 'textfield',
+			  '#title' => t('Add your Google Plus url.'),
+			  '#default_value' => variable_get('google_plus', ''),
+			);
+			break;
+		case 'widget_slideshow':
+			break;
+		
+		
+    }
+
+    return $form;
+}
+
+/**
+ * Implementation of hook_block_save()
+ */
+function widget_block_save($delta = '', $edit = array()) {
+    switch ($delta) {
+        case 'widget_twitter':
+            variable_set('widget_twitter_username', $edit['widget_twitter_username']);
+            variable_set('widget_twitter_tweets_count', $edit['widget_twitter_tweets_count']);
+            break;
+		case 'widget_flickr':
+            variable_set('widget_flickr_id', $edit['widget_flickr_id']);
+            variable_set('widget_flickr_photo_count', $edit['widget_flickr_photo_count']);
+            break;
+		case 'recent_projects':
+			variable_set('recent_projects_block_count', $edit['recent_projects_block_count']);
+			break;
+		case 'recent_posts_sidebar':
+			variable_set('recent_posts_sidebar_block_count', $edit['recent_posts_sidebar_block_count']);
+			break;
+		case 'categories_sidebar':
+			variable_set('categories_sidebar_id', $edit['categories_sidebar_id']);
+			break;
+		case 'tag_cloud_sidebar':
+			variable_set('tag_cloud_sidebar_id', $edit['tag_cloud_sidebar_id']);
+			break;
+		case 'recent_posts_footer':
+			variable_set('recent_posts_footer_block_count', $edit['recent_posts_footer_block_count']);
+			break;
+		case 'widget_social_network':
+			variable_set('facebook', $edit['facebook']);
+			variable_set('twitter', $edit['twitter']);
+			variable_set('delicious', $edit['delicious']);
+			variable_set('google_plus', $edit['google_plus']);
+			break;
+		case 'widget_slideshow':
+			break;
+		
+    }
+}
+
+/**
+ * Implementation of hook_block_view()
+ */
+function widget_block_view($delta = '') {
+    // This example is adapted from node.module.
+    $block = array();
+
+    switch ($delta) {
+        case 'widget_twitter':
+            $block['title'] = widget_block_get_title($delta);
+            $block['content'] = array(
+                '#theme' => 'widget_twitter',
+                '#settings' => array(
+                    'widget_twitter_username' => variable_get('widget_twitter_username', 'Yeahthemes'),
+                    'widget_twitter_tweets_count' => variable_get('widget_twitter_tweets_count', 2),
+                ),
+            );
+            break;
+		case 'widget_flickr':
+            $block['title'] = widget_block_get_title($delta);
+			$block['content'] = array(
+                '#theme' => 'widget_flickr',
+                '#settings' => array(
+                    'widget_flickr_id' => variable_get('widget_flickr_id', '52617155@N08'),
+                    'widget_flickr_photo_count' => variable_get('widget_flickr_photo_count', 6),
+                ),
+            );
+
+            break;
+		case 'recent_projects':
+			$node_limit = variable_get('recent_projects_block_count', 4);
+			$content_type = 'portfolio';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			
+			$block['title'] = widget_block_get_title($delta);
+			
+			if (!empty($nodes)) {
+			$block['content'] = array(
+				'#theme' => 'recent_projects',
+				'#nodes' => $nodes,
+				'#title' => $block['title']
+			);
+			}
+			
+			break;
+		case 'recent_posts_sidebar':
+			$node_limit = variable_get('recent_posts_sidebar_block_count', 5);
+			$content_type = 'blog';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			
+			$block['title'] = widget_block_get_title($delta);
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'recent_posts_sidebar',
+					'#nodes' => $nodes,
+					'#title' => $block['title']
+				);
+			}
+			
+			break;
+		case 'categories_sidebar':
+			$vid = variable_get('categories_sidebar_id');
+			$terms = taxonomy_get_tree($vid);
+			$block['title'] = widget_block_get_title($delta);
+			if (!empty($terms)) {
+				$block['content'] = array(
+					'#theme' => 'categories_sidebar',
+					'#terms' => $terms,
+					'#title' => $block['title']
+				);
+			}
+			break;
+		case 'tag_cloud_sidebar':
+			$vid = variable_get('tag_cloud_sidebar_id');
+			$terms = taxonomy_get_tree($vid);
+			$block['title'] = widget_block_get_title($delta);
+			if (!empty($terms)) {
+				$block['content'] = array(
+					'#theme' => 'tag_cloud_sidebar',
+					'#terms' => $terms,
+					'#title' => $block['title']
+				);
+			}
+			break;
+		case 'recent_posts_footer':
+			$node_limit = variable_get('recent_posts_footer_block_count', 2);
+			$content_type = 'blog';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			
+			$block['title'] = widget_block_get_title($delta);
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'recent_posts_footer',
+					'#nodes' => $nodes,
+					'#title' => $block['title']
+				);
+			}
+			break;
+		case 'widget_social_network':
+			$block['title'] = widget_block_get_title($delta);
+			$block['content'] = array(
+				'#theme' => 'widget_social_network',
+				'#social' => array('facebook'=>variable_get('facebook'), 'twitter'=>variable_get('twitter'), 'delicious'=>variable_get('delicious'), 'google_plus'=>variable_get('google_plus')),
+				'#title' => $block['title']
+			);
+			break;
+		case 'widget_slideshow':
+			$node_limit = 5;
+			$content_type = 'slideshow';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			
+			$block['title'] = widget_block_get_title($delta);
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'widget_slideshow',
+					'#nodes' => $nodes,
+					'#title' => $block['title']
+				);
+			}
+			break;
+    }
+    return $block;
+}
+
+/**
+ * Implementation of hook_theme()
+ * 
+ */
+function widget_theme($existing, $type, $theme, $path) {
+    return array(
+        'widget_twitter' => array(
+            'variables' => array('settings' => array('widget_twitter_username' => NULL, 'widget_twitter_tweets_count' => NULL)),
+            'template' => 'widget_twitter'
+        ),
+		'widget_flickr' => array(
+            'variables' => array('settings' => array('widget_flickr_id' => NULL, 'widget_flickr_photo_count' => NULL)),
+            'template' => 'widget_flickr'
+        ),
+		'recent_projects' => array(
+          'variables' => array('nodes' => NULL, 'title' => NULL),
+          'template' => 'widget_recent_projects',
+      	),
+		'recent_posts_sidebar' => array(
+          'variables' => array('nodes' => NULL, 'title' => NULL),
+          'template' => 'widget_recent_posts_sidebar',
+      	),
+		'categories_sidebar' => array(
+          'variables' => array('terms' => NULL, 'title' => NULL),
+          'template' => 'widget_categories_sidebar',
+      	),
+		'tag_cloud_sidebar' => array(
+          'variables' => array('terms' => NULL, 'title' => NULL),
+          'template' => 'widget_tag_cloud_sidebar',
+      	),
+		'recent_posts_footer' => array(
+          'variables' => array('nodes' => NULL, 'title' => NULL),
+          'template' => 'widget_recent_posts_footer',
+      	),
+		'widget_social_network' => array(
+          'variables' => array('social' => NULL, 'title' => NULL),
+          'template' => 'widget_social_network',
+      	),
+		'widget_slideshow' => array(
+          'variables' => array('nodes' => NULL, 'title' => NULL),
+          'template' => 'widget_slideshow',
+      	),
+    );
+}
+
+function widget_block_get_title($delta) {
+  $block = db_query('SELECT title FROM {block} WHERE delta = :delta', array(':delta' => $delta))->fetchObject();
+
+  return $block->title ? $block->title : '';
+}

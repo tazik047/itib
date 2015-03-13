@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+/*Skin color: Brown */
+
+
+/*Primary color*/
+::selection{background: #855D28}
+::-moz-selection{background: #855D28}
+.m-menu ul > li.current, .m-menu ul > li.current-menu-item, .m-menu ul > li.current_page_item, 
+.m-menu ul > li.current, .m-menu ul > li.active-trail, .m-menu ul > li.active-trail, 
+.m-menu ul > li.current-menu-ancestor, .m-menu ul > li.current-menu-parent,#g-search button,
+.box_skitter_home.maxx-theme .label_skitter ,.maxx-primary-button, input[type="submit"],
+button[type="submit"], .m-pagination span.current,#get-in-touch #via-phone-number .icon,
+.drop-cap.primary,.flex-control-nav li a.flex-active,.md-pricing-table .pt-column.pt-featured-col .pt-heading h1, 
+.md-pricing-table .pt-column.pt-featured-col .pt-heading h5,
+#g-search .form-actions, #get-in-touch #via-phone-number .icon, #get-in-touch .icon{
+	background-color: #855D28;
+}
+
+h1.double-color strong,h2.double-color strong,h3.double-color strong,h4.double-color strong,
+h5.double-color strong,h6.double-color strong,#error-404 h1{
+	color: #855D28;
+}
+
+.plain-text-logo h1,blockquote{
+	border-color: #855D28;
+}
+textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type="search"]:focus,
+input[type="email"]:focus,input[type="tel"]:focus,input.input-field:focus,select:enabled:focus{
+	border-color:#855D28;
+	box-shadow:0 0 5px #855D28;
+	-moz-box-shadow:0 0 5px #855D28;
+	-webkit-box-shadow:0 0 5px #855D28;
+} 
+
+
+
+/*Body content Link color*/
+a,.comment-content a,.comment-time a:hover,.comment-link-function a:hover,.required,.entry-meta ul li a:hover,
+.post-tags a:hover,.comment-meta cite a,.comment-meta cite,#comment-nav-below a:hover, #sidebar ul li a:hover,
+#main-content-wrapper ul li a:hover, #main-content-wrapper ol li a:hover,#sidebar .widget-twitter li a, #sidebar .widget ul li.current-cat > a, .link-pages a, 
+.error, #sidebar .md-latest-portfolios-widget p a:hover, .sp-list li a:hover, #sidebar 
+.widget_recent_comments ul li a:first-child,.m-simple-accordion dt.active span,.m-simple-toggle dt.active span,.m-simple-tabs dt.active span{
+	color: #855D28;
+}
+
+/*Footer & Top bar Link:hover color*/
+#top-bar-wrapper a:hover,#footer-widget-wrapper a:hover,#footer-extra-wrapper a:hover,
+#footer-widget-wrapper a:hover strong,#footer-extra-wrapper a:hover strong,
+#footer-widget-wrapper .widget-twitter li a:hover{
+	color: #c88327;
+}
+
+#slider-bg-overlay > #slider-bg-overlay1{background-color: #855D28;}
+
+
+#footer-widget-wrapper{background-color: #2D1F0F;}
+#footer-extra-wrapper{background-color: #1e150a;}
+
+.box_skitter_home.maxx-theme .info_slide_dots span.image_number_select {
+	background-color: #855D28 !important;
+}
