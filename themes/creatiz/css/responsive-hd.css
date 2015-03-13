@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------------------------*
+ * RESPONSIVENESS BASE FOR LARGE SCREEN v1.0
+ *
+ * Column layout
+ *
+ * Copyright 2012 Yeahthemes.com
+ * Designed and built by Yeahthemes
+ *---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1200px) {
+	#wrap-all.box-layout{
+		width:1230px;
+	}
+	.container{			width:1200px}
+		
+	.one.columns,
+	.one.column{		width:70px;}
+	.two.columns{		width:170px;}
+	.three.columns{		width:270px;}
+	.four.columns{		width:370px;}
+	.five.columns{		width:470px;}
+	.six.columns{		width:570px;}
+	.seven.columns{		width:670px;}
+	.eight.columns{		width:770px;}
+	.nine.columns{		width:870px;}
+	.ten.columns{		width:970px;}
+	.eleven.columns{	width:1070px;}
+	.twelve.columns{	width:1170px;}
+	
+	.special-columns.column-one-fifth {width:210px}
+	.special-columns.column-two-fifth {width:450px}
+	.special-columns.column-three-fifth {width:690px}
+	.special-columns.column-four-fifth {width:930px}
+	
+	.screen-default, .screen-tablet, .screen-mobile-landscape, .screen-mobile-portrait{ display:none;}
+	.screen-large-display{ display:inherit;}
+
+}

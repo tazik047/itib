@@ -1,0 +1,229 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+::selection {
+    background-color: rgba(0,0,0,0.8);
+}
+
+::-moz-selection {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/*TYPOGRAPHY*/
+h1 {
+    font: normal normal 30px/40px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 35px;
+}
+
+h2 {
+    font: normal normal 26px/35px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font: normal normal 22px/30px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font: normal normal 20px/30px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font: normal normal 16px/25px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+h6 {
+    font: normal normal 13px/25px "Varela Round", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong,h1 b,h2 b,h3 b,h4 b,h5 b,h6 b {
+    font-family: "Varela Round", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font: normal normal 13px/24px "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+p {
+    font: normal normal 13px/24px "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#header .m-menu ul li a {
+    font-size: 13px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+#header .m-menu ul li ul li a,#topbar-menu-nav .menu li ul li a {
+    font-size: 12px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+}
+
+#main-flexslider h1,#main-flexslider h2,#main-flexslider h3 {
+    font-family: "Varela Round", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+}
+
+#page-title h1 {
+    font: normal normal 40px/50px "Varela Round", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    margin-bottom: 0px;
+}
+
+#sidebar h3.widget-title {
+    font: normal normal 18px/30px "Varela Round", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    margin-bottom: 15px;
+}
+#footer-widget-wrapper h3.widget-title {
+    font: normal normal 18px/30px "Varela Round", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+/*ELEMENTs COLOR*/
+
+body, p,.default-2-primary a, a.default-2-primary, .mds-social-networks .light.with-description li a, .m-menu ul li ul li a {
+    color: #888;
+}
+
+#wrap-all,.mdw-tabby-widget-wrapper .mdw-tabby-title li.active a, .mdw-fb-likebox-border.light,.mds-features-tabs.left-sidebar .mds-features-tabs-header li.active,.mds-features-tabs.right-sidebar .mds-features-tabs-header li.active, .mds-divider > div.content > * ,.m-menu ul ul li,#page-title.page-title-transparent-style > div.page-title-bg, body.menu-style-one-line #one-line-nav, #banner,.yeah-slider .rev_slider_wrapper .tp-bullets.simplebullets.navbar, .yeah-slider .rev_slider_wrapper.fullwidthbanner-container .tp-bullets.simplebullets.navbar:before, .yeah-slider .rev_slider_wrapper.fullwidthbanner-container .tp-bullets.simplebullets.navbar:after {
+    background: #FFF;
+}
+
+input, input[type="text"], input[type="password"],input[type="email"],textarea, .mds-social-networks ul.color li a i, .mds-social-networks ul.grayscale li a i, .mds-social-networks ul.grayscale li a:hover i, .mds-iconbox.style-style2 .iconbox-header .circle-icon, .mds-iconbox.style-style3 .iconbox-icon > *, .mds-iconbox.style-style4 .iconbox-icon > * {
+    background-image: none !important;
+}form.node-bid-form input{	display:block;}form.node-bid-form span.tabledrag-changed,form.node-bid-form .draggable span.form-required,form.node-bid-form .tabledrag-toggle-weight-wrapper,form.node-bid-form .field-multiple-drag,form.node-bid-form .tabledrag-hide{	display:none;}form.node-bid-form .form-wrapper{	padding-top:15px;}form.node-bid-form .field-multiple-table th.field-label{	position:relative;}form.node-bid-form table.field-multiple-table lable{	position:absolute;	left:0px;}
+
+.button, button, button[type="button"], button[type="reset"], button[type="submit"], input[type="button"], input[type="reset"],input[type="submit"], .mds-button {
+    background-image: none !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+body.webkit-browser.flat-ui select {
+    background-color: #FFF;
+    background-image: url("../images/ui-select.svg") !important;
+}
+
+
+
+/*SECONDARY COLOR*/
+.secondary-color,.secondary-2-primary a, a.secondary-2-primary, .primary-2-secondary a:hover, a.primary-2-secondary:hover, .tertiary-2-secondary a:hover, a.tertiary-2-secondary:hover, .white-2-secondary a:hover, a.white-2-secondary:hover,.mds-tabs-wrapper dt a, .mds-toggles-wrapper dt a, .mds-accordion-wrapper dt a,.portfolio-filter li a,.mds-filterable-portfolio h3 a, .mds-portfolio-carousel h3 a,.mds-features-tabs .mds-features-tabs-header li > a, .mds-features-tabs .mds-features-tabs-trigger a, .mds-single-post .entry-title h3 a, .mds-dropcap.style-outline-dropcap-custom, .mds-dropcap.style-outline-dropcap-primary ,.mdw-accordion-widget li span a:hover, .mdw-tabby-widget li span a:hover, .mdw-twitter-widget li a:hover,.widget_display_topics .topic-author a:hover, .widget_display_replies a.bbp-author-name:hover, .widget_rss li a:hover, .widget_recent_comments ul li a:first-child:hover, .mdw-post-widget-with-calendar li a:hover, .mdw-latest-portfolio-widget article .porfolio-tax a:hover,.portfolio-items article h3 a, .topbar-menu-nav .m-menu .current-menu-item > a {
+    color: #222c33;
+}
+
+.secondary-background-color,.button.button-secondary, button.secondary, #primary-back-to-top:active,.mdw-fb-likebox-border.dark, #footer-wrapper, #footer-wrapper .mdw-tabby-widget-wrapper .mdw-tabby-title li.active a, .mds-progress-bar.secondary-color, .mds-dropcap.style-circle-dropcap-default {
+    background-color: #222c33;
+}
+
+.secondary-border-color,.button.button-secondary, button.button-secondary {
+    border-color: #222c33;
+    background-color: #222c33;
+}
+
+.button.button-primary:hover, button.button-primary:hover, button[type="submit"]:hover, input[type="submit"]:hover, .button.button-primary:active, button.button-primary:active, button[type="submit"]:active, input[type="submit"]:active {
+    background-color: #333;
+}
+
+.mds-progress-bar.gray-color,.entry-format {
+    background-color: #EEE;
+}
+
+.tertiary-2-primary a, a.tertiary-2-primary,.tertiary-2-secondary a, a.tertiary-2-secondary,.tertiary-2-white a, a.tertiary-2-white {
+    color: #aaa;
+}
+
+.white-2-primary a, a.white-2-primary,.white-2-secondary a, a.white-2-secondary,.tertiary-2-white a:hover, a.tertiary-2-white:hover,.primary-2-white a:hover, a.primary-2-white:hover,#footer-widget-wrapper h3.widget-title, #footer-widget-wrapper h1, #footer-widget-wrapper h2, #footer-widget-wrapper h3, #footer-widget-wrapper h4, #footer-widget-wrapper h5, #footer-widget-wrapper h6,#footer-widget-wrapper a:hover {
+    color: #FFF;
+}
+
+#top-info-bar {
+    background-color: #33b3d3;
+}
+
+#top-info-bar *, #topbar-menu-nav * {
+    color: #ffffff;
+}
+
+#top-info-bar a, #topbar-menu-nav a {
+    color: #ffffff;
+}
+
+#top-info-bar a:hover, #topbar-menu-nav a:hover {
+    color: #bcd8dd;
+}
+
+#topbar-menu-nav {
+    background-color: #33b3d3;
+}
+
+#header {
+    border-top-width: 6px;
+    border-top-style: solid;
+}
+
+#banner {
+}
+
+.wp-caption, .widget_calendar table th, .widget_calendar table td, .widget ul li, .mdw-tabby-widget-wrapper .mdw-tabby-content > ul li, .mdw-tabby-widget-wrapper .mdw-tabby-content > *, .mdw-tabby-widget-wrapper .mdw-tabby-content > div, .mdw-tabby-widget-wrapper .mdw-tabby-title li.active a, .widget_tag_cloud a, .mdw-tag-wrapper a ,.post-tag a, .mdw-twitter-profile-body, .mdw-twitter-profile-footer .friends-count, .mdw-twitter-profile-footer .followers-count, .mdw-twitter-profile-footer, .mdw-fb-likebox-border.light, .widget_display_stats dl > *,.m-pagination div > *, .m-menu ul ul a, .full-width-wrapper.site-breadcrumb, #page-title.page-title-transparent-style, #header.header-menustyle-one-line #one-line-nav, ul.menu ul,.ie #top-nav.m-menu ul ul, .table th,.table td, .table-bordered, .table tbody + tbody, .table-bordered th, .table-bordered td, .blog-page.blog-classic-1 .post .entry-meta,.blog-page.blog-classic-1 .post, .blog-page.blog-classic-1 .post,.blog-page.blog-classic-2 .post, .portfolio-filter li, .blog-page.blog-masonry .entry-meta, .comment-block, .comment-list li ul li, #sidebar .widget-title:before, ul.project-meta li:before,.mds-features-tabs .mds-features-tabs-header li, .mds-features-tabs .mds-features-tabs-content, .mds-features-tabs .mds-features-tabs-header li:first-child, .mds-features-tabs .mds-features-tabs-trigger,  .mds-accordion-wrapper dt, .mds-toggles-wrapper dt, .mds-accordion-wrapper dd, .mds-toggles-wrapper dd, .mds-tabs-wrapper dt, .mds-tabs-wrapper dd, ul.mds-list li, .mds-single-post .entry-meta, .mds-posts-list li, .portfolio-items > article > div, .mds-portfolio-carousel li article > div,#bbp-user-navigation ul li,#bbpress-forums ul.bbp-lead-topic,#bbpress-forums ul.bbp-topics,#bbpress-forums ul.bbp-forums,#bbpress-forums ul.bbp-replies,#bbpress-forums ul.bbp-search-results,#bbpress-forums li.bbp-header,#bbpress-forums li.bbp-footer,#bbpress-forums .bbp-forums-list,#bbpress-forums li.bbp-body ul.forum,#bbpress-forums li.bbp-body ul.topic,#bbpress-forums div.bbp-topic-author,#bbpress-forums div.bbp-reply-author,#bbpress-forums .bbp-body div.bbp-forum-content,#bbpress-forums .bbp-body div.bbp-topic-content,#bbpress-forums .bbp-body div.bbp-reply-content,div.bbp-forum-header, div.bbp-topic-header,div.bbp-reply-header,body.topic-edit .bbp-topic-form div.avatar img,body.reply-edit .bbp-reply-form div.avatar img,body.single-forum .bbp-topic-form div.avatar img,body.single-reply .bbp-reply-form div.avatar img,#bbpress-forums .bbp-topic-revision-log,#bbpress-forums .bbp-reply-revision-log,#bbpress-forums p.bbp-topic-meta img.avatar,#bbpress-forums ul.bbp-reply-revision-log img.avatar,#bbpress-forums ul.bbp-topic-revision-log img.avatar,#bbpress-forums div.bbp-template-notice img.avatar,#bbpress-forums .widget_display_topics img.avatar,#bbpress-forums .widget_display_replies img.avatar,#bbpress-forums p.bbp-topic-meta img.avatar,.activity-list li.bbp_topic_create .activity-content .activity-inner,.activity-list li.bbp_reply_create .activity-content .activity-inner,#bbp-author-subscriptions,#bbp-author-favorites,#bbp-author-topics-started,#bbpress-forums li.bbp-header .bbp-reply-author,.widget_display_stats dl>* {
+    border-color: #EEE;
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+#footer-wrapper {
+    border-top-width: 0px;
+    border-top-style: none;
+    border-top-color: #f0f0f0;
+    background-color: #222a33;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: scroll;
+    background-size: auto;
+}
+
+#footer-extra-wrapper {
+    background-color: #1f262e;
+}
+
+#footer-wrapper * {
+    color: #8a8d91;
+}
+
+#footer-wrapper a {
+    color: #c1c5c9;
+}
+
+/*#footer-wrapper a:hover {
+    color: #7cc576;
+}*/
+
+#footer-widget-wrapper .widget_calendar table th, #footer-widget-wrapper .widget_calendar table td, #footer-widget-wrapper .widget ul li, #footer-widget-wrapper .mdw-tabby-widget-wrapper .mdw-tabby-content > ul li, #footer-widget-wrapper .mdw-tabby-widget-wrapper .mdw-tabby-content > *, #footer-widget-wrapper .mdw-tabby-widget-wrapper .mdw-tabby-content > div, #footer-widget-wrapper .mdw-tabby-widget-wrapper .mdw-tabby-title li.active a, #footer-widget-wrapper .widget_tag_cloud a, #footer-widget-wrapper .mdw-tag-wrapper a, #footer-widget-wrapper .mdw-twitter-profile-body, #footer-widget-wrapper .mdw-twitter-profile-footer .friends-count, #footer-widget-wrapper .mdw-twitter-profile-footer .followers-count, #footer-widget-wrapper .mdw-twitter-profile-footer, #footer-widget-wrapper .mdw-fb-likebox-border.dark, #footer-widget-wrapper .widget_display_stats dl > *,#footer-widget-wrapper .mds-features-tabs .mds-features-tabs-header li, #footer-widget-wrapper .mds-features-tabs .mds-features-tabs-content, #footer-widget-wrapper .mds-features-tabs .mds-features-tabs-header li:first-child, #footer-widget-wrapper .mds-features-tabs .mds-features-tabs-trigger, #footer-widget-wrapper .mds-accordion-wrapper dt, #footer-widget-wrapper .mds-toggles-wrapper dt, #footer-widget-wrapper .mds-accordion-wrapper dd, #footer-widget-wrapper .mds-toggles-wrapper dd, #footer-widget-wrapper .mds-tabs-wrapper dt, #footer-widget-wrapper .mds-tabs-wrapper dd, #footer-widget-wrapper ul.mds-list li, #footer-widget-wrapper .mds-single-post .entry-meta, #footer-widget-wrapper .mds-posts-list li {
+    border-color: #1c232b;
+}
+
+.mdw-fb-likebox-border.dark {
+    border-color: rgba(0,0,0,.5);
+}
+
+
+
+#footer-wrapper b,#footer-wrapper strong,#footer-wrapper h1,#footer-wrapper h2,#footer-wrapper h3,#footer-wrapper h4,#footer-wrapper h5,#footer-wrapper h6 {
+    color: #ffffff;
+}

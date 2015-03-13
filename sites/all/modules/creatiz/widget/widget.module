@@ -1,0 +1,485 @@
+<?php
+/*Implementation of hook_block_info()*/
+function widget_block_info() {
+    
+	$blocks['widget_recent_works_one'] = array(
+      'info' => t('[Creatiz] Recent works 1'),
+  	);
+	$blocks['widget_recent_works_two'] = array(
+      'info' => t('[Creatiz] Recent works 2'),
+  	);
+	
+	//FOOTER
+	$blocks['widget_twitter'] = array(
+        'info' => t('[Creatiz] Latest Tweets'),
+    );
+	$blocks['widget_flickr'] = array(
+        'info' => t('[Creatiz] Flickr Widget'),
+    );
+	
+	//Gmap
+	$blocks['widget_gmap'] = array(
+      'info' => t('[Creatiz] Gmap - Contact page'),
+  	);
+	
+	$blocks['recent_posts_two'] = array(
+      'info' => t('[Creatiz] Rescent posts 2'),
+  	);
+	
+    return $blocks;
+}
+
+/*Implementation of hook_block_configure()*/
+function widget_block_configure($delta = '') {
+    $form = array();
+    switch ($delta) {
+		
+		//FOOTER
+		case 'widget_twitter':
+            $form['widget_twitter_username'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Your twitter username'),
+                '#default_value' => variable_get('widget_twitter_username', 'envato'),
+                '#description' => t('Eg: envato')
+            );
+
+            $form['widget_twitter_tweets_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of recent tweets items to display'),
+                '#default_value' => variable_get('widget_twitter_tweets_count', 2),
+                '#options' => drupal_map_assoc(array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+            break;
+		case 'widget_flickr':
+            $form['widget_flickr_id'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Your flickr ID'),
+                '#default_value' => variable_get('widget_flickr_id', '52617155@N08'),
+                '#description' => t('Eg: 52617155@N08')
+            );
+            $form['widget_flickr_photo_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of recent photos items to display'),
+                '#default_value' => variable_get('widget_flickr_photo_count', 6),
+                '#options' => drupal_map_assoc(array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+            break;
+		
+		case 'recent_posts_two':
+			$form['recent_posts_two_block_count'] = array(
+			  '#type' => 'select',
+			  '#title' => t('Number of items to display'),
+			  '#default_value' => variable_get('recent_posts_two_block_count', 3),
+			  '#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)),
+			);
+			$form['recent_posts_two_block_desc'] = array(
+                '#type' => 'textarea',
+                '#title' => t('Description'),
+                '#default_value' => variable_get('recent_posts_two_block_desc', ''),
+				'#rows' => 3
+            );
+			break;
+		case 'widget_recent_works_one':
+			$form['recent_works_block_count'] = array(
+				'#type' => 'select',
+				'#title' => t('Number of items to display'),
+				'#default_value' => variable_get('recent_works_block_count', 8),
+				'#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40, 50, 60, 70, 80, 90, 100)),
+			);
+			break;
+		case 'widget_recent_works_two':
+			$form['recent_works_two_block_count'] = array(
+				'#type' => 'select',
+				'#title' => t('Number of items to display'),
+				'#default_value' => variable_get('recent_works_two_block_count', 8),
+				'#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40, 50, 60, 70, 80, 90, 100)),
+			);
+			$form['recent_works_two_block_desc'] = array(
+                '#type' => 'textarea',
+                '#title' => t('Description'),
+                '#default_value' => variable_get('recent_works_two_block_desc', ''),
+				'#rows' => 3
+            );
+			break;	
+			
+		//Gmap
+		case 'widget_gmap':
+			$form['widget_gmap_latitude'] = array(
+			  '#type' => 'textfield',
+			  '#title' => t('Latitude.'),
+			  '#default_value' => variable_get('widget_gmap_latitude', '52.49878400576003'),
+			  '#description'  => t('<strong>Example:</strong> 52.49878400576003'),
+			);
+			$form['widget_gmap_maptype'] = array(
+                '#type' => 'select',
+                '#title' => t('Maptype'),
+                '#default_value' => variable_get('widget_gmap_maptype', 'ROADMAP'),
+                '#options' => drupal_map_assoc(array('TERRAIN', 'HYBRID', 'SATELLITE', 'ROADMAP')),
+            );
+			$form['widget_gmap_longitude'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Longitude'),
+                '#default_value' => variable_get('widget_gmap_longitude', '-1.9063879018524403'),
+				'#description'  => t('<strong>Example:</strong> -1.9063879018524403'),
+            );
+			$form['widget_gmap_zoom'] = array(
+                '#type' => 'select',
+                '#title' => t('Zoom'),
+                '#default_value' => variable_get('widget_gmap_zoom', '18'),
+				'#options' => drupal_map_assoc(array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)),
+				'#description'  => t('<strong>Example:</strong> 18'),
+            );
+			$form['widget_gmap_pancontrol'] = array(
+                '#type' => 'select',
+                '#title' => t('Pan control'),
+                '#default_value' => variable_get('widget_gmap_pancontrol', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_zoom_control'] = array(
+                '#type' => 'select',
+                '#title' => t('Zoom Control'),
+                '#default_value' => variable_get('widget_gmap_zoom_control', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_map_type_control'] = array(
+                '#type' => 'select',
+                '#title' => t('Type Control'),
+                '#default_value' => variable_get('widget_gmap_map_type_control', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_map_scale_control'] = array(
+                '#type' => 'select',
+                '#title' => t('Scale Control'),
+                '#default_value' => variable_get('widget_gmap_map_scale_control', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_map_street_view_control'] = array(
+                '#type' => 'select',
+                '#title' => t('Street view control'),
+                '#default_value' => variable_get('widget_gmap_map_street_view_control', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_map_overview_map_control'] = array(
+                '#type' => 'select',
+                '#title' => t('Overview map control'),
+                '#default_value' => variable_get('widget_gmap_map_overview_map_control', 'true'),
+				'#options' => drupal_map_assoc(array('true','false')),
+				'#description'  => t('<strong>Example:</strong> True'),
+            );
+			$form['widget_gmap_map_pointer'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Map pointer'),
+                '#default_value' => variable_get('widget_gmap_map_pointer', ''),
+				'#description'  => t('<strong>Example:</strong> http://domain.com/images/map-pointer.png'),
+            );
+			$form['widget_gmap_iconsize'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Icon size'),
+                '#default_value' => variable_get('widget_gmap_iconsize', '85,85'),
+				'#description'  => t('<strong>Example:</strong> 85,85 <em>(width, height)</em>'),
+            );
+			
+			$form['widget_gmap_html'] = array(
+                '#type' => 'textarea',
+                '#title' => t('HTML'),
+                '#default_value' => variable_get('widget_gmap_html', ''),
+				'#description'  => t('<strong>Example:</strong> &lt;img src="htp://yourdomain.com/images/logo.png" height="100" width="220"&gt;'),
+				'#rows' => 5
+            );
+			$form['widget_gmap_height'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Height'),
+                '#default_value' => variable_get('widget_gmap_height', '400px'),
+				'#description'  => t('<strong>Example:</strong> 400px'),
+            );
+            break;
+		
+		
+    }
+
+    return $form;
+}
+
+/*Implementation of hook_block_save()*/
+
+function widget_block_save($delta = '', $edit = array()) {
+    switch ($delta) {
+		
+		//FOOTER
+		case 'widget_twitter':
+            variable_set('widget_twitter_username', $edit['widget_twitter_username']);
+            variable_set('widget_twitter_tweets_count', $edit['widget_twitter_tweets_count']);
+            break;
+		case 'widget_flickr':
+            variable_set('widget_flickr_id', $edit['widget_flickr_id']);
+            variable_set('widget_flickr_photo_count', $edit['widget_flickr_photo_count']);
+            break;
+		
+		case 'recent_posts_two':
+			variable_set('recent_posts_two_block_count', $edit['recent_posts_two_block_count']);
+			variable_set('recent_posts_two_block_desc', $edit['recent_posts_two_block_desc']);
+			break;
+		
+		case 'widget_recent_works_one':
+			variable_set('recent_works_block_count', $edit['recent_works_block_count']);
+			break;
+		case 'widget_recent_works_two':
+			variable_set('recent_works_two_block_count', $edit['recent_works_two_block_count']);
+			variable_set('recent_works_two_block_desc', $edit['recent_works_two_block_desc']);
+			break;
+		//GMAP
+		case 'widget_gmap':
+			variable_set('widget_gmap_latitude', $edit['widget_gmap_latitude']);
+			variable_set('widget_gmap_maptype', $edit['widget_gmap_maptype']);
+			variable_set('widget_gmap_longitude', $edit['widget_gmap_longitude']);
+			variable_set('widget_gmap_zoom', $edit['widget_gmap_zoom']);
+			variable_set('widget_gmap_pancontrol', $edit['widget_gmap_pancontrol']);
+			variable_set('widget_gmap_zoom_control', $edit['widget_gmap_zoom_control']);
+			variable_set('widget_gmap_map_type_control', $edit['widget_gmap_map_type_control']);
+			variable_set('widget_gmap_map_scale_control', $edit['widget_gmap_map_scale_control']);
+			variable_set('widget_gmap_map_street_view_control', $edit['widget_gmap_map_street_view_control']);
+			variable_set('widget_gmap_map_overview_map_control', $edit['widget_gmap_map_overview_map_control']);
+			variable_set('widget_gmap_map_pointer', $edit['widget_gmap_map_pointer']);
+			variable_set('widget_gmap_iconsize', $edit['widget_gmap_iconsize']);
+			variable_set('widget_gmap_html', $edit['widget_gmap_html']);
+			variable_set('widget_gmap_height', $edit['widget_gmap_height']);
+			
+			break;
+    }
+}
+
+/*Implementation of hook_block_view()*/
+
+function widget_block_view($delta = '') {
+    // This example is adapted from node.module.
+    $block = array();
+
+    switch ($delta) {
+			
+		//FOOTER
+		case 'widget_twitter':
+            $block['title'] = widget_block_get_title($delta);
+            $block['content'] = array(
+                '#theme' => 'widget_twitter',
+                '#settings' => array(
+                    'widget_twitter_username' => variable_get('widget_twitter_username', 'envato'),
+                    'widget_twitter_tweets_count' => variable_get('widget_twitter_tweets_count', 2),
+                ),
+            );
+            break;
+		case 'widget_flickr':
+            $block['title'] = widget_block_get_title($delta);
+			$block['content'] = array(
+                '#theme' => 'widget_flickr',
+                '#settings' => array(
+                    'widget_flickr_id' => variable_get('widget_flickr_id', '52617155@N08'),
+                    'widget_flickr_photo_count' => variable_get('widget_flickr_photo_count', 6),
+                ),
+            );
+            break;
+			
+		case 'recent_posts_two':
+			$node_limit = variable_get('recent_posts_two_block_count', 3);
+			$content_type = 'blog'; //Content type
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			
+			$block['title'] = widget_block_get_title($delta);
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'recent_posts_two',
+					'#nodes' => $nodes,
+					'#title' => $block['title'],
+					'#settings' => array(
+						'desc' => variable_get('recent_posts_two_block_desc')
+					)
+				);
+			}
+			break;
+		
+		case 'widget_recent_works_one':
+			$node_limit = variable_get('recent_works_block_count', 8);
+			$content_type = 'portfolio';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			$block['title'] = '';
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'widget_recent_works_one',
+					'#nodes' => $nodes,
+					'#title' => widget_block_get_title($delta),
+					
+				);
+			}
+			
+			break;
+		
+		case 'widget_recent_works_two':
+			$node_limit = variable_get('recent_works_two_block_count', 9);
+			$content_type = 'portfolio';
+			$query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+			$nids = $query->fetchCol();
+			$nodes = node_load_multiple($nids);
+			$block['title'] = '';
+			
+			if (!empty($nodes)) {
+				$block['content'] = array(
+					'#theme' => 'widget_recent_works_two',
+					'#nodes' => $nodes,
+					'#settings' => array(
+						'desc' => variable_get('recent_works_two_block_desc'),
+					),
+					'#title' => widget_block_get_title($delta),
+					
+				);
+			}
+			
+			break;
+		
+		//GMAP
+		case 'widget_gmap':
+			$block['title'] = widget_block_get_title($delta);
+			$block['content'] = array(
+				'#theme' => 'widget_gmap',
+				'#settings' => array(
+								'widget_gmap_latitude'=>variable_get('widget_gmap_latitude'), 
+								'widget_gmap_maptype'=>variable_get('widget_gmap_maptype'), 
+								'widget_gmap_longitude'=>variable_get('widget_gmap_longitude'), 
+								'widget_gmap_zoom'=>variable_get('widget_gmap_zoom'), 
+								'widget_gmap_pancontrol'=>variable_get('widget_gmap_pancontrol'), 
+								'widget_gmap_zoom_control'=>variable_get('widget_gmap_zoom_control'), 
+								'widget_gmap_map_type_control'=>variable_get('widget_gmap_map_type_control'), 
+								'widget_gmap_map_scale_control'=>variable_get('widget_gmap_map_scale_control'), 
+								'widget_gmap_map_street_view_control'=>variable_get('widget_gmap_map_street_view_control'),
+								'widget_gmap_map_overview_map_control'=>variable_get('widget_gmap_map_overview_map_control'),
+								'widget_gmap_map_pointer'=>variable_get('widget_gmap_map_pointer'),
+								'widget_gmap_iconsize'=>variable_get('widget_gmap_iconsize'),								
+								'widget_gmap_html'=>variable_get('widget_gmap_html'),
+								'widget_gmap_height'=>variable_get('widget_gmap_height'),
+								
+								
+								),
+				'#title' => $block['title']
+			);
+			break;
+			
+		
+    }
+    return $block;
+}
+
+/*Implementation of hook_theme()*/
+function widget_theme($existing, $type, $theme, $path) {
+    return array(
+		
+		//FOOTER
+		'widget_twitter' => array(
+            'variables' => array('settings' => array('widget_twitter_username' => NULL, 'widget_twitter_tweets_count' => NULL)),
+            'template' => 'widget_twitter'
+        ),
+		'widget_flickr' => array(
+            'variables' => array('settings' => array('widget_flickr_id' => NULL, 'widget_flickr_photo_count' => NULL)),
+            'template' => 'widget_flickr'
+        ),
+		
+		'recent_posts_two' => array(
+          'variables' => array('nodes' => NULL, 'title' => NULL, 'settings' => array('desc'=>NULL)),
+          'template' => 'widget_recent_posts_two',
+      	),
+		'widget_recent_works_one' => array(
+			'variables' => array('nodes' => NULL, 'title' => NULL),
+			'template' => 'widget_recent_works_one',
+		),
+		'widget_recent_works_two' => array(
+			'variables' => array('nodes' => NULL, 'title' => NULL, 'settings' => array('desc'=>NULL)),
+			'template' => 'widget_recent_works_two',
+		),
+		
+		
+		//GMAP
+		'widget_gmap' => array(
+          'variables' => array('settings' => NULL, 'title' => NULL),
+          'template' => 'widget_gmap',
+      	),
+		
+    );
+}
+
+function widget_block_get_title($delta) {
+  $block = db_query('SELECT title FROM {block} WHERE delta = :delta', array(':delta' => $delta))->fetchObject();
+  return $block->title ? $block->title : '';
+}
+
+
+function widget_trim_text($alter, $value) {
+	if (drupal_strlen($value) > $alter['max_length']) {
+		$value = drupal_substr($value, 0, $alter['max_length']);
+		// TODO: replace this with cleanstring of ctools
+		if (!empty($alter['word_boundary'])) {
+			$regex = "(.*)\b.+";
+			if (function_exists('mb_ereg')) {
+				mb_regex_encoding('UTF-8');
+				$found = mb_ereg($regex, $value, $matches);
+			} else {
+				$found = preg_match("/$regex/us", $value, $matches);
+			}
+			if ($found) {
+				$value = $matches[1];
+			}
+		}
+		// Remove scraps of HTML entities from the end of a strings
+		$value = rtrim(preg_replace('/(?:<(?!.+>)|&(?!.+;)).*$/us', '', $value));
+		
+		if (!empty($alter['ellipsis'])) {
+			$value .= t('...');
+		}
+	}
+	if (!empty($alter['html'])) {
+		$value = _filter_htmlcorrector($value);
+	}
+
+	return $value;
+}
+
+
+//delete attributes width, height.
+function widget_preprocess_image(&$variables) {
+  foreach (array('width', 'height') as $key) {
+    unset($variables[$key]);
+  }
+}
+
+
+function widget_format_terms($field_category, $node, $limit = NULL) {
+  
+    $category_arr = array();
+    $category = '';
+    
+    if (!empty($node->{$field_category}[LANGUAGE_NONE])) {
+        foreach ($node->{$field_category}[LANGUAGE_NONE] as $item) {
+            $term = taxonomy_term_load($item['tid']);
+            if ($term) {
+                $category_arr[] = $term->name;
+            }
+
+            if ($limit) {
+                if (count($category_arr) == $limit) {
+                    $category = implode(', ', $category_arr);
+                    return $category;
+                }
+            }
+        }
+    }
+    $category = implode(', ', $category_arr);
+
+    return $category;
+}

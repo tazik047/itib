@@ -1,0 +1,54 @@
+;Theme info
+name = Creatiz
+description = Creatiz was created with the latest techniques HTML5 & CSS3, Responsive design, Retina Ready, completely optimized for your touchable device.
+package = Core
+version = VERSION
+core = 7.x
+screenshot = 'screenshot.png'
+
+;Stylesheets
+
+;Core regions
+
+;Info bar
+regions[info_bar] = 'Info bar'
+
+regions[main_menu] = 'Main menu'
+regions[right_caption] = 'Right caption'
+regions[content] = 'Main content'
+
+;Sidebar regions
+regions[sidebar_first] = 'Sidebar first'
+regions[sidebar_second] = 'Sidebar second'
+
+;Social network
+regions[social_network_header] = 'Social network header'
+regions[social_network_footer] = 'Social network footer'
+
+regions[gmap] = 'Gmap - Contact page'
+
+;Footer columns
+regions[footer_col_one] = 'Footer col 1'
+regions[footer_col_two] = 'Footer col 2'
+regions[footer_col_three] = 'Footer col 3'
+regions[footer_col_four] = 'Footer col 4'
+
+;Features (core settings)
+features[] = 'logo'
+features[] = 'name'
+features[] = 'slogan'
+features[] = 'node_user_picture'
+features[] = 'comment_user_picture'
+features[] = 'comment_user_verification'
+features[] = 'favicon'
+features[] = 'go_to_top_button'
+features[] = 'secondary_menu'
+
+;Breadcrumb
+settings[breadcrumb_display] = 'yes'
+settings[breadcrumb_separator] = ' &#187; '
+settings[breadcrumb_home] = 1
+
+version = "7.x"
+project = "Creatiz"
+datestamp = "1365027012"

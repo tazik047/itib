@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table-list-question .views-field-title{
+	width:100%;
+	color:#333;
+	font-size:13px;
+}
+.table-list-question, .user-list-question-two{
+	margin-bottom:26px;
+	border-bottom:solid 1px #F7F7F7;
+	padding-bottom:26px;
+	clear:both;
+	width:100%;
+	float:left;
+}
+.table-list-question .views-field, .user-list-question-two .views-field{
+	float:left;
+}
+
+.table-list-question .views-field-title a, .user-list-question-two .views-field-title a{
+	font-size:16px;
+}
+.table-list-question .views-field-field-categories-question, .user-list-question-two .views-field-field-categories-question{
+	float:left;
+	clear:both;
+	margin-right:10px;
+}
+.table-list-question .views-field-created, .user-list-question-two .views-field-created{
+	float:left;
+}
+.table-list-question .views-field-entity-id, .user-list-question-two .views-field-entity-id{
+	float: right;
+	margin-top:-25px;
+	text-align:center;
+	border: solid 1px #F7F7F7;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+.table-list-question span.views-label-entity-id, .user-list-question-two span.views-label-entity-id{
+	background: #F7F7F7;
+	float:left;
+	width: 121%;
+	margin-top: -7px;
+	margin-left: -5px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	padding-bottom: 3px;
+}
+.views-exposed-form{
+	clear:both;
+	float:left;
+	margin-bottom:30px;
+	border-bottom:solid 1px #E8E9EB;
+	width:100%;
+	padding-bottom:12px;
+}
+#edit-submit-questions-list{
+	margin-top:24px;
+}
+.field-name-field-categories-question.field-type-taxonomy-term-reference .field-label{
+	float:left;
+	margin-right:5px;
+}
+.view-answers-to-a-question{
+	clear:both;
+	float:left;
+	width:100%;
+	margin-top:30px;
+}
+.view-answers-to-a-question .views-row{
+	clear:both;
+	float:left;
+	margin-bottom:20px;
+	border-bottom:dotted 1px #E5E5E5;
+	padding-bottom:20px;
+}
+.view-answers-to-a-question .views-row:last-child{
+	border:none;
+}
+.view-answers-to-a-question .views-row .user-picture{
+	float:left;
+	width:90px;
+	overflow:hidden;
+	margin-right:20px;
+}
+.view-answers-to-a-question .views-row .user-picture img{
+	float:left;
+	width:90px;
+	height:90px;
+}
+.view-answers-to-a-question .views-row .content{
+	float:left;
+	/*margin-left:110px;*/
+}
+.view-answers-to-a-question{
+	border-top:1px dotted #ccc;
+	padding-top:20px;
+}
+
+#question-node-form .form-item, #user-register-form .form-item, #user-login .form-item, #user-register-form .form-item{
+	clear:both;
+	float:left;
+	margin-bottom:16px;
+	width:100%;
+}
+#question-node-form .form-item label, #user-register-form .form-item label{
+	min-width:140px;
+	float:left;
+}
+#user-register-form, #user-login{
+	margin-top:20px;
+	float:left;
+}
+#user-register-form .form-item, #user-login .form-item{
+	float:left;
+	margin-bottom:20px;
+	
+}
+#user-profile-form .form-item{
+	clear:both;
+	float:left;
+	margin-bottom:20px;
+}
+#edit-account{
+	clear:both;
+	float:left;
+	margin-top:20px;
+}
+.password-suggestions.description{
+	float:left;
+	clear:both;
+}
+#user-profile-form .form-item .description{
+	clear:both;
+	float:left
+}

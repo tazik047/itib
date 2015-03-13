@@ -1,0 +1,4 @@
+name = Creatiz Widget
+description = Provide custom widget such as twitter,flickr, latest work...
+core = 7.x
+package = Creatiz

@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------------------------*
+ * CUSTOM RESPONSIVENESS FOR LARGE DISPLAY v1.0
+ *
+ * Custom style for separate screens
+ *
+ * Copyright 2012 Yeahthemes.com
+ * Designed and built by Yeahthemes
+ *---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1200px) {
+	
+	/*Flex content slider*/
+    .flexslider.content-flexslider .slides  li img.slide-image-large-display {
+        display: block;
+    }
+
+    .flexslider.content-flexslider .slides  li img.slide-image-default {
+        display: none;
+    }
+
+    #wrap-all.box-layout .flexslider.content-flexslider .container {
+        width: 1230px;
+    }
+
+    .flexslider.image-flexslider .slider-caption-wrapper {
+        width: 1170px;
+        margin-left: -585px;
+    }
+}

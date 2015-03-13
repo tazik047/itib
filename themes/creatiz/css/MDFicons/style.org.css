@@ -1,0 +1,271 @@
+@font-face {
+	font-family: 'MDFicons';
+	src: url('fonts/MDFicons.eot');
+	src: url('fonts/MDFicons.eot?#iefix') format('embedded-opentype'),
+		url('fonts/MDFicons.svg#MDFicons') format('svg'),
+		url('fonts/MDFicons.woff') format('woff'),
+		url('fonts/MDFicons.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'MDFicons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	text-decoration:none !important;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="micon-"] {
+*/
+.micon-zerply, .micon-youtube, .micon-yahoo, .micon-wordpress, .micon-vimeo, .micon-video, .micon-viddler, .micon-twitter, .micon-tumblr, .micon-triangle-up, .micon-triangle-right, .micon-triangle-left, .micon-triangle-down, .micon-top-up, .micon-tag, .micon-stumbleupon, .micon-standard, .micon-spotify, .micon-sound-on, .micon-sound-off, .micon-soundcloud, .micon-socl, .micon-socialcam, .micon-slider-arrow-right, .micon-slider-arrow-left, .micon-skype, .micon-sharethis, .micon-rss, .micon-reddit, .micon-quote, .micon-posterous, .micon-play, .micon-pinterest, .micon-picasaweb, .micon-pause, .micon-path, .micon-options, .micon-myspace, .micon-menu-arrow-right, .micon-menu-arrow-left, .micon-menu, .micon-map-pointer, .micon-magnifier, .micon-linkedin, .micon-link, .micon-lastfm, .micon-itunes, .micon-instagram, .micon-image, .micon-home, .micon-grooveshark, .micon-googleplus, .micon-github, .micon-gallery, .micon-forrst, .micon-flickr, .micon-facebook-alt, .micon-facebook, .micon-evernote, .micon-email, .micon-dribbble, .micon-digg, .micon-deviantart, .micon-delicious, .micon-cross, .micon-checkmark, .micon-bubbles, .micon-blogger, .micon-behance, .micon-audio, .micon-aside, .micon-arrow-up, .micon-arrow-right, .micon-arrow-left, .micon-arrow-down, .micon-apple, .micon-addthis, .micon-500px {
+	font-family: 'MDFicons';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	text-decoration:none !important;
+}
+.micon-zerply:before {
+	content: "\e000";
+}
+.micon-youtube:before {
+	content: "\e001";
+}
+.micon-yahoo:before {
+	content: "\e002";
+}
+.micon-wordpress:before {
+	content: "\e003";
+}
+.micon-vimeo:before {
+	content: "\e004";
+}
+.micon-video:before {
+	content: "\e005";
+}
+.micon-viddler:before {
+	content: "\e006";
+}
+.micon-twitter:before {
+	content: "\e007";
+}
+.micon-tumblr:before {
+	content: "\e008";
+}
+.micon-triangle-up:before {
+	content: "\e009";
+}
+.micon-triangle-right:before {
+	content: "\e00a";
+}
+.micon-triangle-left:before {
+	content: "\e00b";
+}
+.micon-triangle-down:before {
+	content: "\e00c";
+}
+.micon-top-up:before {
+	content: "\e00d";
+}
+.micon-tag:before {
+	content: "\e00e";
+}
+.micon-stumbleupon:before {
+	content: "\e00f";
+}
+.micon-standard:before {
+	content: "\e010";
+}
+.micon-spotify:before {
+	content: "\e011";
+}
+.micon-sound-on:before {
+	content: "\e012";
+}
+.micon-sound-off:before {
+	content: "\e013";
+}
+.micon-soundcloud:before {
+	content: "\e014";
+}
+.micon-socl:before {
+	content: "\e015";
+}
+.micon-socialcam:before {
+	content: "\e016";
+}
+.micon-slider-arrow-right:before {
+	content: "\e017";
+}
+.micon-slider-arrow-left:before {
+	content: "\e018";
+}
+.micon-skype:before {
+	content: "\e019";
+}
+.micon-sharethis:before {
+	content: "\e01a";
+}
+.micon-rss:before {
+	content: "\e01b";
+}
+.micon-reddit:before {
+	content: "\e01c";
+}
+.micon-quote:before {
+	content: "\e01d";
+}
+.micon-posterous:before {
+	content: "\e01e";
+}
+.micon-play:before {
+	content: "\e01f";
+}
+.micon-pinterest:before {
+	content: "\e020";
+}
+.micon-picasaweb:before {
+	content: "\e021";
+}
+.micon-pause:before {
+	content: "\e022";
+}
+.micon-path:before {
+	content: "\e023";
+}
+.micon-options:before {
+	content: "\e024";
+}
+.micon-myspace:before {
+	content: "\e025";
+}
+.micon-menu-arrow-right:before {
+	content: "\e026";
+}
+.micon-menu-arrow-left:before {
+	content: "\e027";
+}
+.micon-menu:before {
+	content: "\e028";
+}
+.micon-map-pointer:before {
+	content: "\e029";
+}
+.micon-magnifier:before {
+	content: "\e02a";
+}
+.micon-linkedin:before {
+	content: "\e02b";
+}
+.micon-link:before {
+	content: "\e02c";
+}
+.micon-lastfm:before {
+	content: "\e02d";
+}
+.micon-itunes:before {
+	content: "\e02e";
+}
+.micon-instagram:before {
+	content: "\e02f";
+}
+.micon-image:before {
+	content: "\e030";
+}
+.micon-home:before {
+	content: "\e031";
+}
+.micon-grooveshark:before {
+	content: "\e032";
+}
+.micon-googleplus:before {
+	content: "\e033";
+}
+.micon-github:before {
+	content: "\e034";
+}
+.micon-gallery:before {
+	content: "\e035";
+}
+.micon-forrst:before {
+	content: "\e036";
+}
+.micon-flickr:before {
+	content: "\e037";
+}
+.micon-facebook-alt:before {
+	content: "\e038";
+}
+.micon-facebook:before {
+	content: "\e039";
+}
+.micon-evernote:before {
+	content: "\e03a";
+}
+.micon-email:before {
+	content: "\e03b";
+}
+.micon-dribbble:before {
+	content: "\e03c";
+}
+.micon-digg:before {
+	content: "\e03d";
+}
+.micon-deviantart:before {
+	content: "\e03e";
+}
+.micon-delicious:before {
+	content: "\e03f";
+}
+.micon-cross:before {
+	content: "\e040";
+}
+.micon-checkmark:before {
+	content: "\e041";
+}
+.micon-bubbles:before {
+	content: "\e042";
+}
+.micon-blogger:before {
+	content: "\e043";
+}
+.micon-behance:before {
+	content: "\e044";
+}
+.micon-audio:before {
+	content: "\e045";
+}
+.micon-aside:before {
+	content: "\e046";
+}
+.micon-arrow-up:before {
+	content: "\e047";
+}
+.micon-arrow-right:before {
+	content: "\e048";
+}
+.micon-arrow-left:before {
+	content: "\e049";
+}
+.micon-arrow-down:before {
+	content: "\e04a";
+}
+.micon-apple:before {
+	content: "\e04b";
+}
+.micon-addthis:before {
+	content: "\e04c";
+}
+.micon-500px:before {
+	content: "\e04d";
+}
