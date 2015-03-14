@@ -82,7 +82,7 @@
 	?>
 	<style type="text/css">
 		body {
-			background-image: url("<?php print path_to_theme()?>/images/bg/random_grey_variations.png");
+			background-image: url("<?php print base_path() . drupal_get_path('theme', 'creatiz')?>/images/bg/random_grey_variations.png");
 			background-color: #222;
 			background-repeat: repeat;
 			background-position: center center;
