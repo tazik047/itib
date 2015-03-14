@@ -11,6 +11,7 @@
 				?>
 				<div id="logo" class="image-logo animated fadeIn">
 					<a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>" rel="home" ><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a> 
+					<h1 style="display: inline;vertical-align: middle;margin-left: 14px;"><?php print $site_name;?></h1>
 				</div>
 				<?php
 					endif;

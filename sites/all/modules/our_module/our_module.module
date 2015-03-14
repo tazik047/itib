@@ -3,10 +3,10 @@
  * Implements hook_form_BASE_FORM_ID_alter(): node_form.
  */
 function our_module_form_node_form_alter(&$form, &$form_state, $form_id) {
-	
 	switch ($form_id) {
-		case 'anceta_node_form':
+		case 'bid_node_form':
 			$form['additional_settings']['#access'] = 0;
+			drupal_set_title(t('Registration for the conference'));
 		break;
 	}
 }
