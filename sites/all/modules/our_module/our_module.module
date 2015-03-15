@@ -5,8 +5,14 @@
 function our_module_form_node_form_alter(&$form, &$form_state, $form_id) {
 	switch ($form_id) {
 		case 'bid_node_form':
+		case 'application_form_for_listener_node_form':
 			$form['additional_settings']['#access'] = 0;
-			drupal_set_title(t('Registration for the conference'));
+			$form['#after_build'][] = 'set_title';			
 		break;
 	}
+}
+
+function set_title($form, &$form_state){
+	drupal_set_title(t('Registration for the conference'));
+	return $form;
 }

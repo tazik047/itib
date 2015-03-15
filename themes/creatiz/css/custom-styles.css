@@ -99,7 +99,7 @@ p {
 /*ELEMENTs COLOR*/
 
 body, p,.default-2-primary a, a.default-2-primary, .mds-social-networks .light.with-description li a, .m-menu ul li ul li a {
-    color: #888;
+    /*color: #888;*/
 }
 
 #wrap-all,.mdw-tabby-widget-wrapper .mdw-tabby-title li.active a, .mdw-fb-likebox-border.light,.mds-features-tabs.left-sidebar .mds-features-tabs-header li.active,.mds-features-tabs.right-sidebar .mds-features-tabs-header li.active, .mds-divider > div.content > * ,.m-menu ul ul li,#page-title.page-title-transparent-style > div.page-title-bg, body.menu-style-one-line #one-line-nav, #banner,.yeah-slider .rev_slider_wrapper .tp-bullets.simplebullets.navbar, .yeah-slider .rev_slider_wrapper.fullwidthbanner-container .tp-bullets.simplebullets.navbar:before, .yeah-slider .rev_slider_wrapper.fullwidthbanner-container .tp-bullets.simplebullets.navbar:after {
@@ -108,7 +108,7 @@ body, p,.default-2-primary a, a.default-2-primary, .mds-social-networks .light.w
 
 input, input[type="text"], input[type="password"],input[type="email"],textarea, .mds-social-networks ul.color li a i, .mds-social-networks ul.grayscale li a i, .mds-social-networks ul.grayscale li a:hover i, .mds-iconbox.style-style2 .iconbox-header .circle-icon, .mds-iconbox.style-style3 .iconbox-icon > *, .mds-iconbox.style-style4 .iconbox-icon > * {
     background-image: none !important;
-}form.node-bid-form input{	display:block;}form.node-bid-form span.tabledrag-changed,form.node-bid-form .draggable span.form-required,form.node-bid-form .tabledrag-toggle-weight-wrapper,form.node-bid-form .field-multiple-drag,form.node-bid-form .tabledrag-hide{	display:none;}form.node-bid-form .form-wrapper{	padding-top:15px;}#edit-field-tags-und {	width: 458px;	display: block;}form.node-bid-form .field-multiple-table th.field-label{	position:relative;	height:25px;}form.node-bid-form input[type="file"]{	margin-bottom: 10px;	width: 458px;	padding: 6px 10px;	border-width: 1px;	border-style: solid;}form.node-bid-form table.field-multiple-table label{	position:absolute;	left:0px;	top:0px;}
+}form.node-form input,#user-login input {	display:block;}form.node-form span.tabledrag-changed,form.node-form .draggable span.form-required,form.node-form .tabledrag-toggle-weight-wrapper,form.node-form .field-multiple-drag,form.node-form .tabledrag-hide{	display:none;}form.node-form .form-wrapper{	padding-top:15px;}form.node-form .resizable-textarea,form.node-form select{	width:458px;}form.node-form textarea{	resize:none;}#edit-field-tags-und {	width: 458px;	display: block;}form.node-form .field-multiple-table th.field-label{	position:relative;	height:25px;}form.node-form input[type="file"]{	margin-bottom: 10px;	width: 458px;	padding: 6px 10px;	border-width: 1px;	border-style: solid;}form.node-form table.field-multiple-table label{	position:absolute;	left:0px;	top:0px;}
 
 .button, button, button[type="button"], button[type="reset"], button[type="submit"], input[type="button"], input[type="reset"],input[type="submit"], .mds-button {
     background-image: none !important;

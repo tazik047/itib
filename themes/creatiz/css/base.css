@@ -2598,7 +2598,7 @@ transition:all ease .3s
 #primary-back-to-top.active {
 	opacity:.3;
 	filter:alpha(opacity=30);
-	top:15px
+	top:5px
 }
 #primary-back-to-top:hover {
 	opacity:1;
