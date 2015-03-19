@@ -1,3 +1,4 @@
+
 <?php Global $base_url?>
 <?php
 	$layout = theme_get_setting('creatiz_layout', 'creatiz');

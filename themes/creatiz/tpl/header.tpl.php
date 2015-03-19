@@ -1,6 +1,8 @@
+<div id = "vishivanka">
+	
+	</div>	
 <header id="header" role="banner" class="full-width-wrapper header-menustyle-one-line tall-header">
 	<div class="arrow-down" id="open-this-info-text">Open</div>
-	
 	<!--Banner-->
 	<section id="banner" class="full-width-wrapper">
 		<div class="container">
@@ -11,14 +13,14 @@
 				?>
 				<div id="logo" class="image-logo animated fadeIn">
 					<a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>" rel="home" ><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a> 
-					<h1 style="display: inline;vertical-align: middle;margin-left: 14px;"><?php print $site_name;?></h1>
+					<div id="mainPicture">
+						<img id = "pic" src="<?php print base_path() . drupal_get_path('theme', 'creatiz');?>/images/Shevchenko.png" alt="<?php print 'logo'; ?>" />
+					</div>
 				</div>				
 				<div id="partner_logo">
 					<img src="<?php print base_path() . drupal_get_path('theme', 'creatiz');?>/images/partner_logo.png" alt="<?php print 'logo'; ?>" />
 				</div>
-				<div id="circles">
-					<img src="<?php print base_path() . drupal_get_path('theme', 'creatiz');?>/images/circles.jpg" alt="<?php print 'logo'; ?>" />
-				</div>
+				
 				<?php
 					endif;
 				?>
@@ -60,11 +62,7 @@
 				<!--/Primary Nav-->
 				
 				<!--Right Caption-->
-				<div class="float-right one-line-menu-right-content primary-2-secondary">
-					<?php if ($page['right_caption']): ?>
-						<?php print render($page['right_caption']); ?>
-					<?php endif; ?>
-				</div>
+				
 				<!--/Right Caption-->
 			</div>
 		</div>

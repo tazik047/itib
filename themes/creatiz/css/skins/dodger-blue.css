@@ -33,14 +33,21 @@
 }
 
 
-
+/*
 .primary-border-color,.button.button-primary, button.button-primary, input[type="submit"], button[type="submit"], input:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus, select:focus, select:active, .widget_calendar #wp-calendar #today, #header, #footer-wrapper, #open-this-info-text, #top-nav.m-menu ul ul, .m-menu .play-me > *, #header.header-menustyle-one-line .m-menu .play-me,  #header.header-menustyle-double .m-menu  ul.menu > li:hover:before, #header.header-menustyle-double .m-menu  ul.menu > li.current-menu-item:before, #header.header-menustyle-double .m-menu  ul.menu > li.current-menu-ancestor:before, #header.header-menustyle-double .m-menu  ul.menu > li.current_page_item:before, #header.header-menustyle-double .m-menu  ul.menu > li.current_page_ancestor:before, #top-nav.m-menu ul li ul li a:hover, #topbar-menu-nav .menu li ul li a:hover, #mobile-menu-nav-wrapper:hover, #mobile-menu-nav-wrapper:active, .portfolio-items > article:hover > div, .portfolio-items > article > div:before, .mds-portfolio-carousel li article:hover > div, .mds-portfolio-carousel li article > div:before, .mds-pricing-table .pt-column.pt-featured-col, .mds-dropcap.style-outline-dropcap-primary {
 
     border-color: #33b3d3;
 
 }
+*/
+#header ,#open-this-info-text{
+border-color: rgb(103, 160, 213);
+}
+   #footer-wrapper, #top-nav.m-menu ul ul, .m-menu .play-me > *, #header.header-menustyle-one-line .m-menu .play-me,  #header.header-menustyle-double .m-menu  ul.menu > li:hover:before, #header.header-menustyle-double .m-menu  ul.menu > li.current-menu-item:before, #header.header-menustyle-double .m-menu  ul.menu > li.current-menu-ancestor:before, #header.header-menustyle-double .m-menu  ul.menu > li.current_page_item:before, #header.header-menustyle-double .m-menu  ul.menu > li.current_page_ancestor:before, #top-nav.m-menu ul li ul li a:hover, #topbar-menu-nav .menu li ul li a:hover, #mobile-menu-nav-wrapper:hover, #mobile-menu-nav-wrapper:active, .portfolio-items > article:hover > div, .portfolio-items > article > div:before, .mds-portfolio-carousel li article:hover > div, .mds-portfolio-carousel li article > div:before, .mds-pricing-table .pt-column.pt-featured-col, .mds-dropcap.style-outline-dropcap-primary {
 
+    border-color: yellow;
 
+}
 
 .mdw-tabby-widget-wrapper .mdw-tabby-title li a {
 

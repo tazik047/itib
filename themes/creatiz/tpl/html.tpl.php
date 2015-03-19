@@ -98,11 +98,14 @@
 
 </head>
 <body class="webkit-browser mac-platform desktop enabled-responsiveness large-display-responsiveness flat-ui menu-style-one-line <?php print $classes; ?>" <?php print $attributes;?>>
+
 <div id="skip-link"><a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a></div>
 	<a class="back-to-top md-circle" id="primary-back-to-top" href="#top" title="Back to top"><i class=" micon-arrow-up"></i></a>
+	
 	<?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+	
 	
 	<style>
 	iframe[class*='PIN_'],iframe[class^='PIN_']{display:none!important;}
