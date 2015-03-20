@@ -15,7 +15,8 @@ function our_module_form_node_form_alter(&$form, &$form_state, $form_id) {
 			$form['additional_settings']['#access'] = 0;
 			$form['#after_build'][] = 'set_title';
 			
-			set_required(0);			
+			set_required(0);	
+			$form['title']['#value']=t('Title of paper');	
 			
 			$form['field_tags']['#states'] = array(
 			'visible' => array(
@@ -25,13 +26,24 @@ function our_module_form_node_form_alter(&$form, &$form_state, $form_id) {
 			  'input[name="field_will_be_published[und]"]' => array('checked' => TRUE)
 				),
 			);
+			$form['field_abstract']['#states'] =  
 			$form['field_abstract']['#states'] = 
-			$form['title']['#states'] = 
-			$form['field_abstract']['#states'] = 
+			$form['title']['#states'] =
 			$form['field_need_accommodation']['#states'] = $form['field_tags']['#states'];
 			$form['field_addition_information']['#states'] = array(
 			'visible' => array(
 			  'input[name="field_will_be_published[und]"]' => array('checked' => TRUE)
+				),
+			);
+			
+			$form['field_master_classes']['#states'] = array(
+			'visible' => array(
+			  'input[name="field_will_be_published[und]"]' => array('checked' => FALSE)
+				),
+			);
+			$form['field_section_listen']['#states'] = array(
+			'visible' => array(
+			  'input[name="field_will_be_published[und]"]' => array('checked' => FALSE)
 				),
 			);
 		break;
@@ -41,18 +53,18 @@ function our_module_form_node_form_alter(&$form, &$form_state, $form_id) {
 function my_validate(&$form, &$form_state){
 	if(!$form['field_will_be_published']['und']['#value']){
 		$form['title']['#required'] = 0;
-		$form['title']['#value']='Default value';	
-		$form['#node']->title='Default value';	
-		$form['#entity']->title='Default value';
-		print '<pre>';
-		print_r($form);
-		die();
+		$form['title']['#value']=t('Title of paper');
+		$form['#node']->title='Topic2';	
+		$form['#entity']->title='Topic3';
+		
 	}
-	else{
+	else{/*print '<pre>';
+		print_r($form);
+		die();*/
 		if(count($form['field_tags']['und']['#value'])==0){
 			form_set_error('Section', t('Field "Section" is required.'));
 		}
-		if(!$form['field_abstract']['und']['#file']){
+		if(!$form['field_abstract']['und'][0]['#file']){
 			form_set_error('Abstract', t('Field "Abstract" is required.'));
 		}
 		
